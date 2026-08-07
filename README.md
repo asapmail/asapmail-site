@@ -1,6 +1,6 @@
 # Retention Agency Website
 
-Private development repository for the English-language retention/lifecycle CRM agency website.
+Development repository for the English-language retention/lifecycle CRM agency website.
 
 ## Stack
 
