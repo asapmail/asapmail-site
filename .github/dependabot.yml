@@ -9,6 +9,10 @@ updates:
       timezone: Europe/Moscow
     open-pull-requests-limit: 5
     versioning-strategy: increase-if-necessary
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
     groups:
       testing:
         patterns:
@@ -30,6 +34,10 @@ updates:
       time: "09:15"
       timezone: Europe/Moscow
     open-pull-requests-limit: 3
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
     labels:
       - dependencies
       - github-actions
