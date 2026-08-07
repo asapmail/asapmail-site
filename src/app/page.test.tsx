@@ -9,6 +9,9 @@ describe("Home", () => {
     expect(
       screen.getByRole("heading", { name: /retention agency website/i }),
     ).toBeInTheDocument();
-    expect(screen.getByText(/foundation ready/i)).toBeInTheDocument();
+    expect(screen.getByText(/secure development workflow is live/i)).toBeInTheDocument();
+    expect(
+      screen.getByLabelText(/preview validation status/i),
+    ).toBeInTheDocument();
   });
 });
