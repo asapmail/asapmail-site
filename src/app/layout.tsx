@@ -3,8 +3,9 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Retention Agency Website — Development",
-  description: "Development foundation for the retention agency website.",
+  title: "Asapmail — Retention, CRM & Lifecycle Systems",
+  description:
+    "Senior-led lifecycle strategy, implementation, automation, and campaign production across email, SMS, push, and in-app.",
   robots: { index: false, follow: false },
 };
 
