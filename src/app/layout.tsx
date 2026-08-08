@@ -3,9 +3,16 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Retention Agency Website — Development",
-  description: "Development foundation for the retention agency website.",
-  robots: { index: false, follow: false },
+  title: "Asapmail | Retention, CRM and Lifecycle Systems",
+  description:
+    "Senior-led lifecycle strategy, implementation and campaign production across email, SMS, push and in-app messaging.",
+  openGraph: {
+    title: "Asapmail | Retention, CRM and Lifecycle Systems",
+    description:
+      "Turn customer data into lifecycle journeys that activate, retain and grow users.",
+    type: "website",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
