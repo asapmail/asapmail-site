@@ -113,6 +113,7 @@ export default function Home() {
           <span>Asapmail</span>
         </a>
         <nav aria-label="Primary navigation" className="primary-nav">
+          <a href="/email-production">Email production</a>
           <a href="#services">Services</a>
           <a href="#system">System</a>
           <a href="#process">Process</a>
@@ -319,7 +320,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="footer-brand"><a className="brand" href="#top"><Mark /><span>Asapmail</span></a><p>Senior-led retention, CRM, and lifecycle systems.</p></div>
-        <div className="footer-nav"><span>Navigate</span><a href="#services">Services</a><a href="#system">System</a><a href="#process">Process</a><a href="#experience">Experience</a></div>
+        <div className="footer-nav"><span>Navigate</span><a href="/email-production">Email production</a><a href="#services">Services</a><a href="#system">System</a><a href="#process">Process</a><a href="#experience">Experience</a></div>
         <div className="footer-meta footer-contacts"><span>Contact</span><a href="https://t.me/starcv" target="_blank" rel="noopener noreferrer">Telegram · @starcv</a><a href="mailto:hello@asapmail.example">Email · Demo</a><a href="https://wa.me/12025550123" target="_blank" rel="noopener noreferrer">WhatsApp · Demo</a></div>
         <div className="footer-bottom"><span>© Asapmail</span><span>Independent senior practitioner-led studio</span><span>No partner status claimed</span></div>
       </footer>
