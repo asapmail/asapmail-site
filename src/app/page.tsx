@@ -128,7 +128,14 @@ export default function Home() {
             <h1 id="hero-title">Turn customer data into journeys that <em>keep people moving.</em></h1>
             <p className="hero-intro">We design and implement lifecycle systems across email, SMS, push, and in-app — from event architecture to launch and optimization.</p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#contact">Request a lifecycle audit <Arrow /></a>
+              <a
+                className="button button-primary"
+                href="https://t.me/starcv"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Request a lifecycle audit <Arrow />
+              </a>
               <a className="text-link" href="#process">See how we work <Arrow /></a>
             </div>
           </div>
@@ -298,8 +305,14 @@ export default function Home() {
             <div><span>04</span><strong>Fractional lead</strong><p>Senior strategy, governance, and enablement.</p></div>
           </div>
           <div className="contact-action">
-            <p>Contact channel is shared directly during the current review phase.</p>
-            <a className="button button-light" href="#top">Review the system <Arrow /></a>
+            <div>
+              <p>Choose the channel that works for you. Telegram is live; email and WhatsApp are labeled demo contacts for this review.</p>
+              <div className="contact-links" aria-label="Contact channels">
+                <a href="https://t.me/starcv" target="_blank" rel="noopener noreferrer"><span>Telegram</span><strong>@starcv</strong><Arrow /></a>
+                <a href="mailto:hello@asapmail.example"><span>Email · Demo</span><strong>hello@asapmail.example</strong><Arrow /></a>
+                <a href="https://wa.me/12025550123" target="_blank" rel="noopener noreferrer"><span>WhatsApp · Demo</span><strong>+1 202 555 0123</strong><Arrow /></a>
+              </div>
+            </div>
           </div>
         </section>
       </main>
@@ -307,7 +320,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="footer-brand"><a className="brand" href="#top"><Mark /><span>Asapmail</span></a><p>Senior-led retention, CRM, and lifecycle systems.</p></div>
         <div className="footer-nav"><span>Navigate</span><a href="#services">Services</a><a href="#system">System</a><a href="#process">Process</a><a href="#experience">Experience</a></div>
-        <div className="footer-meta"><span>Channels</span><p>Email · SMS · Push · In-app</p><p>SaaS · FinTech · Web3 · E-commerce</p></div>
+        <div className="footer-meta footer-contacts"><span>Contact</span><a href="https://t.me/starcv" target="_blank" rel="noopener noreferrer">Telegram · @starcv</a><a href="mailto:hello@asapmail.example">Email · Demo</a><a href="https://wa.me/12025550123" target="_blank" rel="noopener noreferrer">WhatsApp · Demo</a></div>
         <div className="footer-bottom"><span>© Asapmail</span><span>Independent senior practitioner-led studio</span><span>No partner status claimed</span></div>
       </footer>
     </>
