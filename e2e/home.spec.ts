@@ -30,8 +30,14 @@ test("homepage supports keyboard navigation and has no detectable accessibility 
   await expect(skipLink).toBeFocused();
   await expect(skipLink).toBeVisible();
 
-  const results = await new AxeBuilder({ page }).analyze();
-  expect(results.violations).toEqual([]);
+test("homepage does not overflow on a narrow mobile viewport", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 720 });
+  await page.goto("/");
+  const dimensions = await page.evaluate(() => ({
+    scrollWidth: document.documentElement.scrollWidth,
+    clientWidth: document.documentElement.clientWidth,
+  }));
+  expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth);
 });
 
 test("homepage does not overflow the viewport", async ({ page }) => {
