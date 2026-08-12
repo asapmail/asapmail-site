@@ -14,8 +14,20 @@ describe("Asapmail home page", () => {
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /request a lifecycle audit/i }),
-    ).toHaveAttribute("href", "#contact");
+    ).toHaveAttribute("href", "https://t.me/starcv");
     expect(screen.getByText(/platform names indicate familiarity and compatibility/i)).toBeInTheDocument();
+  });
+
+  it("publishes Telegram and clearly labeled demo contact channels in the contact section and footer", () => {
+    render(<Home />);
+
+    expect(screen.getAllByRole("link", { name: /telegram/i })).toHaveLength(2);
+    expect(screen.getAllByRole("link", { name: /telegram/i })[0]).toHaveAttribute(
+      "href",
+      "https://t.me/starcv",
+    );
+    expect(screen.getAllByRole("link", { name: /email.*demo/i })).toHaveLength(2);
+    expect(screen.getAllByRole("link", { name: /whatsapp.*demo/i })).toHaveLength(2);
   });
 
   it("renders every required home-page section", () => {
