@@ -70,5 +70,6 @@ describe("Asapmail home page", () => {
   it("provides a keyboard skip link", () => {
     render(<Home />);
     expect(screen.getByRole("link", { name: /skip to main content/i })).toHaveAttribute("href", "#main");
+    expect(screen.getAllByRole("link", { name: /email production/i })[0]).toHaveAttribute("href", "/email-production");
   });
 });
