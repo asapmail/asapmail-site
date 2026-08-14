@@ -1,95 +1,132 @@
 # Asapmail Design System
 
-Status: implemented home-page direction.
+Status: implemented design variant for the agency home page.
 
 ## Design read
 
-Asapmail is a senior practitioner-led retention and lifecycle studio. The page must make a technical operating model legible to SaaS, FinTech, Web3, and e-commerce teams, while remaining credible to partner-program reviewers. It avoids the visual language of a large performance-marketing agency: no borrowed logos, fake dashboards, inflated metrics, testimonials, partner badges, or anonymous “results.”
+A senior-led B2B agency page for technical buyers and partner-program reviewers. The visual language is systems-editorial rather than generic agency polish: precise, dark, high-contrast and operational. The composition treats the lifecycle as a routed signal moving through one accountable system.
 
-The core subject is signal routing: product behavior enters as events, becomes segments, is orchestrated into journeys, delivered as messages, and returns as retention learning. The visual identity treats this chain as both information architecture and interface.
+Design dials:
 
-## Direction: signal workshop
+- Design variance: 8/10. Asymmetric hero, irregular service grid and varied section structures.
+- Motion intensity: 4/10. Restrained load-in and signal-path motion only.
+- Visual density: 4/10. Editorial whitespace with enough technical detail for due diligence.
 
-The design combines an editorial studio with an operational control board. Warm paper, dark green-black ink, exposed rules, numbered modules, and mono labels suggest rigor without looking like generic enterprise software. A vivid vermilion signal color marks movement and decisions; acid lime is reserved for connected-system outcomes.
+## Design rationale
 
-The deliberate aesthetic risk is the oversized lifecycle signal board in the hero. Rather than using a decorative product mockup, it makes the agency’s mental model the dominant visual artifact. The rest of the page stays disciplined and typographic so the board remains memorable.
+The audience needs evidence of systems thinking before decoration. A charcoal field suggests an operating environment; acid lime identifies the single customer signal moving from event to retention. Sharp geometry avoids the soft SaaS-card aesthetic and supports the idea of implementation discipline. Claims are deliberately conservative: platform names are framed as familiarity and compatibility, while unpublished case proof is described honestly.
 
 ## Tokens
 
 ### Color
 
-- `paper` — `#F2F0E7`: primary warm background.
-- `paper-bright` — `#FAF9F4`: lifted editorial surfaces.
-- `ink` — `#17221D`: primary text and dark sections.
-- `ink-soft` — `#405048`: secondary text on light surfaces.
-- `fog` — `#CDD5CD`: structural offset and quiet borders.
-- `signal` — `#FF5F3D`: lifecycle movement and primary CTA field.
-- `signal-dark` — `#C73920`: accessible signal text and focus ring on light surfaces.
-- `lime` — `#C8F36B`: connected state and outcome surface.
+| Role | Token | Value | Use |
+| --- | --- | --- | --- |
+| Canvas | `--ink` | `#10120f` | Global background |
+| Raised surface | `--ink-soft` | `#181b17` | Hero media and grouped content |
+| Primary text | `--paper` | `#eef0e9` | Headings and key copy |
+| Secondary text | `--paper-muted` | `#b7bcb1` | Supporting copy |
+| Structure | `--line` | `#3c4139` | Borders and routing lines |
+| Signal | `--signal` | `#c7f43d` | One accent across the page |
+| Signal text | `--signal-ink` | `#182000` | Text on the signal color |
+| Focus | `--focus` | `#e6ff91` | Keyboard focus ring |
 
-Text/background combinations used in the page meet WCAG AA for normal text. Bright signal and lime are not used for small body text on white.
+The page is theme-locked to dark. The lime CTA combinations and all body text are designed for WCAG AA contrast. No section introduces a second accent.
 
 ### Typography
 
-No runtime font request is made.
-
-- Display: Georgia / Times fallback. Human, editorial, and intentionally distinct from SaaS grotesks.
-- Body: Arial / Helvetica fallback. Neutral and highly legible.
-- Utility: SFMono-Regular / Consolas / Liberation Mono. Used for system labels, numbering, and disclosures.
-- Display scale: fluid `clamp()` values from 2.5rem to 8rem with tight leading (0.9–0.98).
-- Body scale: 0.76rem for compact operational copy through 1.2rem for introductions.
+- Display and body: local system stack, `Helvetica Neue`, `Nimbus Sans L`, Arial, sans-serif.
+- Utility and technical annotation: `SFMono-Regular`, Consolas, `Liberation Mono`, monospace.
+- No runtime font request is made.
+- Display type uses tight tracking and moderate weight instead of extreme size.
+- Hero scale: `clamp(3.2rem, 6.2vw, 6.7rem)` desktop and `clamp(3.1rem, 15vw, 4.6rem)` mobile.
+- Body copy is generally 13-19px with 1.5-1.65 line height.
 
 ### Grid
 
-- Desktop shell: 3.5vw side gutters.
-- Primary editorial split: `0.55fr / 1.35fr`.
-- Hero split: `0.9fr / 1.1fr`, with a minimum 31rem signal board.
-- Cards: 3 columns for services, 2 for experience, 5 stages for lifecycle.
-- Tablet collapses the hero and lifecycle rail; mobile uses one column throughout.
+- Maximum composition width: 1600px.
+- Global gutter: `clamp(1rem, 4vw, 4.5rem)`.
+- Desktop hero: asymmetric 1.04 / 0.96 split.
+- Services: 1.2 / 0.8 / 1 grid with intentional vertical offsets.
+- Signal path: five equal stages, changing to two columns on tablet and a linear stack on mobile.
+- Process: sticky editorial statement plus sequential build steps.
+- Platform groups: 1.25 / 1 / 0.75 columns.
+
+Each major section uses a distinct layout family to avoid template repetition.
 
 ### Spacing
 
-A practical 4px base is applied through a restrained set of repeated values: 0.5rem, 0.75rem, 1rem, 1.5rem, 2rem, 3rem, 5rem, and fluid 5–9vw section space. Dense system artifacts use tighter spacing than narrative sections.
+- Section padding: `clamp(5rem, 10vw, 9rem)`.
+- Mobile section padding: 4.5rem.
+- Header height: 72px desktop, 64px mobile.
+- Component spacing uses a 4px base rhythm, with common steps at 12, 16, 24, 32, 48 and 64px.
 
-### Radius, borders, and elevation
+### Shape and material
 
-- Radius: none for primary surfaces and controls; circles only indicate nodes, status, or numbering.
-- Borders: 1px structural rules, usually 18% ink on light and 22% white on dark.
-- Elevation: no soft shadows. The hero board uses one solid `fog` offset to read like a physical systems sheet.
+- Cards, images, controls and badges use square corners.
+- Borders are 1px and communicate grouping or sequence.
+- No generic outer drop shadows are used.
+- The only background texture is a fixed, low-opacity grain layer to avoid scroll repaint cost.
 
-## Motion
+### Motion
 
-- Duration: 180ms.
-- Easing: CSS `ease` for the single arrow translation on actionable links.
-- No scroll-triggered motion, looping animation, parallax, or motion-only information.
-- `prefers-reduced-motion: reduce` disables smooth scrolling and reduces all transition/animation durations.
+- Hero copy enters in a short sequence to establish reading order.
+- Hero media follows with a horizontal reveal.
+- The lifecycle connector moves to communicate signal direction.
+- Hover and active transforms provide button feedback.
+- Motion affects only opacity and transform, except the lightweight background-position change on the 2px signal line.
+- `prefers-reduced-motion: reduce` disables animation, smooth scrolling and long transitions.
 
 ## Signature element
 
-The lifecycle signal board diagrams:
+The signal path is the design's organizing device. It appears first as a generated tactile routing-board photograph, then becomes a semantic ordered sequence:
 
-`events → segments → journeys → messages → retention`
+`Events -> Segments -> Journeys -> Messages -> Retention`
 
-It uses real taxonomy examples, channel roles, route nodes, and an outcome bar. It is not an analytics screenshot and makes no metric claim. The same sequence reappears later as an accessible ordered list, turning the signature into the page’s explanatory backbone rather than decoration.
+The visual was generated specifically for this variant and stored locally as an optimized WebP at `public/lifecycle-routing-board.webp`. It contains no text, people, logos, partner marks or remote runtime dependencies.
 
-## Component states
+## Components and states
 
-- Links: underline or directional translation on hover.
-- Buttons: dark-to-signal or paper-to-lime surface change on hover.
-- Keyboard focus: 3px `signal-dark` outline with 4px offset.
-- Skip link: hidden off-canvas until focused.
-- Disabled/loading/error/success states are not present because the MVP has no active form or asynchronous controls.
+- Primary CTA: lime field with dark text; hover brightens and lifts; active presses down; focus receives a 3px high-contrast ring.
+- Text links: visible underline, lime hover and high-contrast focus.
+- Platform labels: structural bordered labels, not badges or certification marks.
+- Skip link: hidden off-canvas until focused, then fixed above the page.
+- Contact state: an explicit pending-domain status replaces a fake or non-functional form submission.
+
+No loading, error or success state is required because the page is statically rendered and has no network-backed form or interactive data.
 
 ## Responsive rules
 
-- Above 1050px: full three-part navigation, split hero, multi-column cards, horizontal lifecycle rail.
-- 701–1050px: primary navigation is removed in favor of logo plus audit anchor; hero and lifecycle rail stack; cards reduce to two columns.
-- At 700px and below: 1rem gutters, single-column cards and process, all signal-board stages stack, CTA options stack, and footer becomes two columns.
-- Content order and semantics remain identical at every breakpoint.
-- No horizontal scrolling is required at a 320px viewport.
+### Desktop, 1024px and above
 
-## Accessibility and content rationale
+- Full single-line navigation and CTA.
+- Hero fits the initial dynamic viewport under the 72px header.
+- Five-stage lifecycle path runs horizontally.
+- Process statement remains sticky while the sequence scrolls.
 
-The page uses a skip link, one `h1`, sequential section headings, semantic `header`, `nav`, `main`, `section`, `article`, ordered/unordered lists, and `footer`. Decorative SVGs and diagram internals are hidden where surrounding text already provides the accessible meaning. All navigation works without JavaScript. Compatibility and experience disclosures appear next to the relevant claims rather than in legal fine print.
+### Tablet, 768-1023px
 
-The review-phase contact block intentionally does not invent a corporate email or submit to an unverified endpoint. It states that the contact channel is shared directly during review. A validated form, privacy policy route, legal entity details, and public corporate contact remain launch prerequisites.
+- Navigation links collapse while the audit CTA remains visible.
+- Service grid becomes two columns.
+- Lifecycle stages become a two-column composition with a full-width final stage.
+- Platform and process layouts retain their desktop structure where space permits.
+
+### Mobile, below 768px
+
+- Every multi-column section becomes one column.
+- Hero copy precedes the 26rem media panel.
+- Lifecycle stages become a compact vertical ordered list.
+- Sticky behavior is removed.
+- Platform groups and service tiles become full width.
+- Horizontal experience capabilities remain intentionally scrollable without causing page overflow.
+
+## Accessibility and content integrity
+
+- Semantic header, navigation, main, sections, ordered lists, figure and footer.
+- One H1 and a logical heading hierarchy.
+- Keyboard-visible skip link and focus states.
+- Generated image has concise descriptive alt text.
+- Decorative arrow glyphs and signal numbers are hidden where appropriate.
+- Partner-status disclaimers appear near platform references.
+- No customer names, metrics, testimonials, logos, awards or partner badges are invented.
+- Contact and privacy endpoints are marked pending rather than fabricated.
